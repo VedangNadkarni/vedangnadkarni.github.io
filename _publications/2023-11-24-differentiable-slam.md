@@ -1,0 +1,18 @@
+---
+title: "Differentiable SLAM Helps Deep Learning-based LiDAR Perception Tasks"
+collection: publications
+permalink: /publication/2023-11-24-differentiable-slam
+excerpt: 'We design a SLAM Loss to train LiDAR based models.'
+date: 2023-11-24
+venue: 'BMVC'
+slidesurl: 'https://bmvc2022.mpi-inf.mpg.de/BMVC2023/0822_poster.pdf'
+paperurl: 'https://papers.bmvc2023.org/0822.pdf'
+citation: 'Prashant Kumar, Dheeraj Vattikonda, Vedang Bhupesh Shenvi Nadkarni, Erqun Dong, and Sabyasachi Sahoo, “Differentiable SLAM helps deep learning-based lidar perception tasks,” in <i>34th British Machine Vision Conference (BMVC)</i>, Aberdeen, UK, BMVA Press, 2023, p. 822'
+---
+We investigate a new paradigm that uses differentiable SLAM architectures in a self-supervised manner to train end-to-end deep learning models in various LiDAR based applications. To the best of our knowledge there does not exist any work that leverages SLAM as a training signal for deep learning based models. We explore new ways to improve the efficiency, robustness, and adaptability of LiDAR systems with deep learning techniques. We focus on the potential benefits of differentiable SLAM architectures for improving performance of deep learning tasks such as classification, regression as well as SLAM. Our experimental results demonstrate a non-trivial increase in the performance of two deep learning applications - Ground Level Estimation and Dynamic to Static LiDAR Translation, when used with differentiable SLAM architectures. Overall, our findings provide important insights that enhance the performance of LiDAR based navigation systems. We demonstrate that this new paradigm of using SLAM Loss signal while training LiDAR based models can be easily adopted by the community.
+
+[Download poster here](https://bmvc2022.mpi-inf.mpg.de/BMVC2023/0822_poster.pdf)
+
+[Download paper here](https://papers.bmvc2023.org/0822.pdf)
+
+[Download arxiv preprint here](https://arxiv.org/abs/2309.09206)
