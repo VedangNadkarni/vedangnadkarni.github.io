@@ -3,10 +3,11 @@ layout: archive
 title: "Portfolio"
 permalink: /portfolio/
 author_profile: true
+modified: 2025-03-31
 ---
 
 {% include base_path %}
-
+<p><i>Last updated on {{ page.modified | date: "%B %d, %Y" }}</i></p>
 
 {% for post in site.portfolio %}
   {% include archive-single.html %}
