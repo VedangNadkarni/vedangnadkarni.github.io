@@ -7,7 +7,7 @@ date: 2023-11-24
 venue: 'BMVC'
 slidesurl: 'https://bmvc2022.mpi-inf.mpg.de/BMVC2023/0822_poster.pdf'
 paperurl: 'https://papers.bmvc2023.org/0822.pdf'
-citation: 'Prashant Kumar, Dheeraj Vattikonda, Vedang Bhupesh Shenvi Nadkarni, Erqun Dong, and Sabyasachi Sahoo, “Differentiable SLAM helps deep learning-based lidar perception tasks,” in <i>34th British Machine Vision Conference (BMVC)</i>, Aberdeen, UK, BMVA Press, 2023, p. 822'
+citation: 'Prashant Kumar, Dheeraj Vattikonda, Vedang Bhupesh Shenvi Nadkarni, Erqun Dong, and Sabyasachi Sahoo, “Differentiable SLAM helps deep learning-based lidar perception tasks” in <i>34th British Machine Vision Conference (BMVC)</i>, Aberdeen, UK, BMVA Press, 2023, p. 822'
 ---
 
 <sub>[AI based explainer](#ai-summary) [Poster](#poster) [Paper](#paper) [Citation](#rec-citation)</sub>
