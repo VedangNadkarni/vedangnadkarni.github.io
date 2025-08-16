@@ -1,6 +1,6 @@
 ---
 layout: archive
-modified: 2025-03-31
+modified: 2025-08-16
 title: "CV"
 permalink: /cv/
 author_profile: true

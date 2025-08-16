@@ -1,14 +1,14 @@
 ---
 permalink: /education/
 title: "Education"
-modified: 2025-04-08
+modified: 2025-08-16
 author_profile: true
 layout: single
 ---
 
 {% include base_path %}
 ## Summary
-This document provides an overview of my educational journey. You may skip to a particular section if you are looking for specific information. Further, each section has a TL;DR (Too Long; Didn't Read) summary for quick reference:
+This page provides an overview of my educational journey. You may skip to a particular section if you are looking for specific information. Further, each section has a TL;DR (Too Long; Didn't Read) summary for quick reference:
 - [Why this page](#why-this-page)
 - [Before College](#before-college)
 - [How I joined my college (yes this is important)](#how-i-joined-my-college)
@@ -18,7 +18,7 @@ This document provides an overview of my educational journey. You may skip to a 
 
 <sub>_[TL;DR](#tldr1) - A summary of this section_</sub>
 
-*As of {{ page.modified | date: "%B %d, %Y" }}, I am still enrolled at my university in India.* Having completed my education so far in India, I felt this page may be helpful in explaining the details of my education, the coursework I have undertaken (before and at college), and help resolve any confusions that may arise from my education history. College education in India is roughly modelled after the British system of a 3 year undergraduate degree, and a 2 year postgraduate degree. However, as with most things in India, there are variations and exceptions to this.
+*As of {{ page.modified | date: "%B %d, %Y" }}, I recently graduated from my university in India.* Having completed my education so far in India, I felt this page may be helpful in explaining the details of my education, the coursework I have undertaken (before and at college), and help resolve any confusions that may arise from my education history. College education in India is roughly modelled after the British system of a 3 year undergraduate degree, and a 2 year postgraduate degree. However, as with most things in India, there are variations and exceptions to this.
 
 ### TL;DR - [click here for more details](#why-this-page) {#tldr1}
 - My pre-college education and college education has been in India.
@@ -56,15 +56,14 @@ Being interested in Physics at the time, and given my options, I decided to join
 
 <sub>_[TL;DR](#tldr4) - A summary of this section_</sub>
 
-The programme is called a dual degree programme as it has an option to pursue a second degree. However, it is the norm to pursue an Engineering degree as the second degree and both the university and the programme are structure to suit this (The course requirements, pre-requirements, number of required electives, etc.). Both the degrees are each equivalent to a 4 year degree in the respective subject, and each include a semester long thesis or industrial internship.
+The programme I enrolled in is called a dual degree programme, as it has an option to pursue a second degree. However, it is the norm to pursue an Engineering degree as the second degree and both the university and the programme are structured to suit this (The course requirements, pre-requirements, number of required electives, etc.). Both the degrees are each equivalent to a 4 year degree in the respective subject, and each includes a semester long thesis or industrial internship.
 
 The programme I joined is itself called an Integrated M.Sc. in Physics, which is expected to take 4 years to complete. However, at the end of the first year, based on the grades in the first year's two semesters and availability of seats, students get an option to select a second degree (conventionally a B.E. degree), which extends the duration of the programme to 5 years.
 
 After a year of study (which by the way was fully online, from home, due to the ongoing CoVID-19 pandemic), having seen the ever-growing importance of digital technology and finding myself intersted in robotics and machine learning, I decided to join the B.E. Computer Science programme.
 
-As part of my coursework, I took up Physics courses equivalent to an undergraduate + masters level Physics curriculum. In Computer Science, particularly in Computer Vision, Robotics, Deep Learning and Machine Learning, I have built a proficiency and practical skillset through self-study, several internships and research projects. You can read more about it [here](/portfolio/) or in my [CV](/cv/). As part of the requirements of the programme, I have done a research internship in 3D Computer Vision and am doing my Master's thesis in the image diffusion models for data augmentation in underwater images.
+As part of my coursework, I took up Physics courses equivalent to an undergraduate + masters level Physics curriculum. In Computer Science, particularly in Computer Vision, Robotics, Deep Learning and Machine Learning, I have built a proficiency and practical skillset through self-study, several internships and research projects. You can read more about it [here](/portfolio/) or in my [CV](/cv/). As part of the requirements of the programme, I have done a research internship in 3D Computer Vision and a Master's project in image diffusion models for data augmentation in underwater images.
 
 ### TL;DR - [click here for more details](#college-degree) {#tldr4}
-- I am enrolled at BITS Pilani, India in the dual degree programme - Integrated M.Sc. in Physics and a B.E. in Computer Science
-- *I expect to graduate in June 2025 with a valid M.Sc. degree, allowing me to enroll in a PhD programme.*
-- I will defend my Masters thesis on image diffusion models for data augmentation (<u>thus a Computer Science Masters thesis</u>) in May 2025.
+- I have graduated from BITS Pilani, India with a dual degree programme - Integrated M.Sc. in Physics and a B.E. in Computer Science.
+- Having completed several internships and research projects, I have built a proficiency in Computer Vision, Robotics, Deep Learning and Machine Learning. I am preparing to join a PhD in Visual AI Systems.

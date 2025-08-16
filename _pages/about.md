@@ -2,6 +2,7 @@
 permalink: /
 title: "About me"
 author_profile: true
+modified: 2025-08-16
 redirect_from: 
   - /about/
   - /about.html/
@@ -11,8 +12,6 @@ redirect_from:
 Hi! I'm a student researcher working on Deep Learning, AI and their applications. I'm pursuing my Integrated MSc. (Hons.) Physics and B.E. (Hons.) Computer Science at the [Birla Institute of Technology and Science Pilani](https://www.bits-pilani.ac.in) in [Pilani, India](https://maps.app.goo.gl/EiLdrMGXCJ59NMd47). I have worked on research projects involving the application of Deep Learning and Machine Learning in Computer Vision, Robotics, 3D modelling, Image generation and Augmentation, Astronomy, Particle Physics, Multi-UAV communication networks. 
 
 My research interests are Computer Vision and Applied AI. I hope to create an impact in the industry and the research community through my research. I am interested in working on research problems that help the indsutry and the community use and benefit from novel developments in Deep Learning.
-
-__News: I'm looking for research opportunities in Deep Learning and AI for Computer Vision applications. If you have any opportunities (a PhD. or a research engineering position), I'd be obliged if you reach out to me by [email](mailto:{{ site.author.email }}) or on [LinkedIn](https://www.linkedin.com/in/{{ site.author.linkedin }}).__
 
 
 How I got here: my (short) ~~history lesson~~ academic journey
@@ -26,4 +25,4 @@ In my second year of college, I also started working with a student team on buil
 
 In the summer of 2023, I was able to do an internship at the [Max Planck Institute for Intelligent Systems, Tübingen, Germany](https://is.mpg.de/), with funding from the [DAAD-WISE Scholarship](https://www.daad.in/en/2023/09/20/applications-invited-working-internships-in-science-and-engineering-wise-2023-24/). I worked with the [Polybot](https://polybot.eu/) team led by [Dr. Wieland Brendel](https://robustml.is.mpg.de/) where I worked on Machine vision for quadruped robots to be used for sustainable agriculture. It was also my first time living in Europe, and I enjoyed the experience. I then took up projects at my university working on [ML for Membership Determination for Open Star Clusters](https://doi.org/10.1093/mnras/stab118), [Deep Learning for the Reconstruction of Particle Physics Processes](https://doi.org/10.21468/SciPostPhys.12.5.178) and [Federated Learning in Multi-UAV communication networks](https://doi.org/10.1109/TVT.2020.3028011).
 
-I spent 6 months as an intern at the [Prof. Sergio Escalera's HuPBA lab](https://sergioescalera.com/) at the [University of Barcelona](https://web.ub.edu/en/home), to work on efficient 3D human capture from multi-view cameras and depth. There, I got my hands dirty with [3D Gaussian Splatting](https://en.wikipedia.org/wiki/Gaussian_splatting#3D_Gaussian_splatting) and other techniques of 3D graphics. Right now, I am at [INRIA Sophia Antipolis](https://www.inria.fr/en/inria-centre-universite-cote-azur) working on Knowledge injection in generative models for image generation and augmentation.
+I spent 6 months as an intern at the [Prof. Sergio Escalera's HuPBA lab](https://sergioescalera.com/) at the [University of Barcelona](https://web.ub.edu/en/home), to work on efficient 3D human capture from multi-view cameras and depth. There, I got my hands dirty with [3D Gaussian Splatting](https://en.wikipedia.org/wiki/Gaussian_splatting#3D_Gaussian_splatting) and other techniques of 3D graphics. Finally, I completed my Masters project at [INRIA Sophia Antipolis](https://www.inria.fr/en/inria-centre-universite-cote-azur) working on Knowledge injection in generative models for image generation and augmentation.
