@@ -47,17 +47,60 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
+        {% capture links %}
+          {% if page.paperurl %}<a href="{{ page.paperurl }}">Download Paper</a>{% endif %}
+          {% if page.slidesurl %}{% if page.paperurl %} | {% endif %}<a href="{{ page.slidesurl }}">Download Slides</a>{% endif %}
+          {% if page.bibtex %}{% if page.paperurl or page.slidesurl %} | {% endif %}<a href="#" class="copy-bibtex">Copy BibTeX</a><textarea class="bibtex-content" style="display:none">{{ page.bibtex }}</textarea><span class="copy-msg" style="margin-left:8px;display:none;font:inherit;">Copied</span>{% endif %}
+        {% endcapture %}
+        {% assign links = links | strip %}
+
+        {% if page.citation %}
+          <p id="rec-citation">Recommended citation: {{ page.citation }}{% if links != "" %}<br />{{ links }}{% endif %}</p>
+        {% elsif links != "" %}
+          <p>{{ links }}</p>
         {% endif %}
+
+        <script>
+        document.addEventListener('click', function(e){
+          const el = e.target;
+          if (!el.classList || !el.classList.contains('copy-bibtex')) return;
+          e.preventDefault();
+          const p = el.closest('p, sub, div, article, section');
+          const ta = (p && p.querySelector('.bibtex-content')) || document.querySelector('.bibtex-content');
+          let msg = (p && p.querySelector('.copy-msg')) || (el.parentElement && el.parentElement.querySelector('.copy-msg')) || document.querySelector('.copy-msg');
+          const text = (el.dataset && el.dataset.bibtex) ? el.dataset.bibtex : (ta ? ta.value : '');
+          if (!text) return;
+
+          const showMsgOnce = ()=>{
+            if (msg) {
+              msg.style.display='inline';
+              setTimeout(()=>msg.style.display='none',1500);
+              return;
+            }
+            // create temporary inline message next to the clicked link
+            msg = document.createElement('span');
+            msg.className = 'copy-msg temp-copy-msg';
+            msg.style.marginLeft = '8px';
+            msg.style.font = 'inherit';
+            msg.textContent = 'Copied';
+            el.insertAdjacentElement('afterend', msg);
+            setTimeout(()=>{ msg.remove(); msg = null; }, 1500);
+          };
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(showMsgOnce).catch(()=>{ fallback(); });
+          } else {
+            fallback();
+          }
+          function fallback(){
+            if (!ta) return;
+            ta.style.display = 'block';
+            ta.select();
+            try { document.execCommand('copy'); showMsgOnce(); } catch(e){}
+            ta.style.display = 'none';
+          }
+        });
+        </script>
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
@@ -66,7 +109,7 @@ layout: default
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
-        {% include page__taxonomy.html %}
+        {% include page__taxonomy.html %}   
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}
