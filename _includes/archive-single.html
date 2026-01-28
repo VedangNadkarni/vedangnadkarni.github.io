@@ -52,18 +52,36 @@
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
     
-    {% if post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
+    {% comment %}Render citation on its own line, then render other links on one line separated by " | "{% endcomment %}
+    {% if post.citation %}
+      <p id="rec-citation">Recommended citation: {{ post.citation }}</p>
+    {% endif %}
+
+    {% comment %}Build a single-line list of available links/actions separated by " | "{% endcomment %}
+    {% capture links %}{% endcapture %}
+    {% assign sep = "" %}
+
+    {% if post.paperurl %}
+      {% capture links %}{{ links }}{{ sep }}<a href="{{ post.paperurl }}">Download Paper</a>{% endcapture %}
+      {% assign sep = " | " %}
+    {% endif %}
+
+    {% if post.arxivurl %}
+      {% capture links %}{{ links }}{{ sep }}<a href="{{ post.arxivurl }}">ArXiv preprint</a>{% endcapture %}
+      {% assign sep = " | " %}
+    {% endif %}
+
+    {% if post.slidesurl %}
+      {% capture links %}{{ links }}{{ sep }}<a href="{{ post.slidesurl }}">Download Slides</a>{% endcapture %}
+      {% assign sep = " | " %}
+    {% endif %}
+
+    {% if post.bibtex %}
+      {% capture links %}{{ links }}{{ sep }}<a href="#" class="copy-bibtex" title="Copy BibTeX">Copy BibTeX</a><textarea class="bibtex-content" style="display:none">{{ post.bibtex }}</textarea><span class="copy-msg" style="margin-left:8px;display:none;font:inherit;">Copied</span>{% endcapture %}
+    {% endif %}
+
+    {% if links != "" %}
+      <p>{{ links }}</p>
     {% endif %}
 
   </article>

@@ -1,3 +1,43 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
 {% include analytics.html %}
+
+<script>
+  // Copy BibTeX handler: listens for clicks on .copy-bibtex elements
+  document.addEventListener('click', function (ev) {
+    const btn = ev.target.closest && ev.target.closest('.copy-bibtex');
+    if (!btn) return;
+    ev.preventDefault();
+    const container = btn.closest && (btn.closest('sub') || btn.parentElement);
+    const bibEl = container && container.querySelector('.bibtex-content');
+    const msgEl = container && container.querySelector('.copy-msg');
+    const text = bibEl ? (bibEl.value || bibEl.textContent || '') : '';
+    if (!text) return;
+
+    const showCopied = () => {
+      if (!msgEl) return;
+      const prev = msgEl.textContent;
+      msgEl.style.display = 'inline';
+      msgEl.textContent = 'Copied';
+      setTimeout(function () { msgEl.style.display = 'none'; msgEl.textContent = prev; }, 1500);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(showCopied).catch(function () { fallbackCopy(text, showCopied); });
+    } else {
+      fallbackCopy(text, showCopied);
+    }
+  });
+
+  function fallbackCopy(text, onSuccess) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.left = '-9999px';
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    try { document.execCommand('copy'); onSuccess(); } catch (e) { console.error('Copy failed', e); }
+    document.body.removeChild(ta);
+  }
+</script>

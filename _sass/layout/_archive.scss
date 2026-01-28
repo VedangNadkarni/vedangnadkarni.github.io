@@ -66,6 +66,16 @@
   }
 }
 
+/* Reduce vertical gap between the recommended citation and the inline links that follow */
+.archive__item {
+  p#rec-citation {
+    margin-bottom: 0.25em;
+  }
+  p#rec-citation + p {
+    margin-top: 0.25em;
+  }
+}
+
 .archive__item-teaser {
   border-radius: $border-radius;
   overflow: hidden;

@@ -47,17 +47,35 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% capture links %}
-          {% if page.paperurl %}<a href="{{ page.paperurl }}">Download Paper</a>{% endif %}
-          {% if page.slidesurl %}{% if page.paperurl %} | {% endif %}<a href="{{ page.slidesurl }}">Download Slides</a>{% endif %}
-          {% if page.bibtex %}{% if page.paperurl or page.slidesurl %} | {% endif %}<a href="#" class="copy-bibtex">Copy BibTeX</a><textarea class="bibtex-content" style="display:none">{{ page.bibtex }}</textarea><span class="copy-msg" style="margin-left:8px;display:none;font:inherit;">Copied</span>{% endif %}
-        {% endcapture %}
-        {% assign links = links | strip %}
+        {% comment %}Build links list compactly so we can include arXiv when present{% endcomment %}
+        {% capture links %}{% endcapture %}
+        {% assign sep = "" %}
+
+        {% if page.paperurl %}
+          {% capture links %}{{ links }}{{ sep }}<a href="{{ page.paperurl }}">Download Paper</a>{% endcapture %}
+          {% assign sep = " | " %}
+        {% endif %}
+
+        {% if page.arxivurl %}
+          {% capture links %}{{ links }}{{ sep }}<a href="{{ page.arxivurl }}">ArXiv preprint</a>{% endcapture %}
+          {% assign sep = " | " %}
+        {% endif %}
+
+        {% if page.slidesurl %}
+          {% capture links %}{{ links }}{{ sep }}<a href="{{ page.slidesurl }}">Download Slides</a>{% endcapture %}
+          {% assign sep = " | " %}
+        {% endif %}
+
+        {% if page.bibtex %}
+          {% capture links %}{{ links }}{{ sep }}<a href="#" class="copy-bibtex" title="Copy BibTeX">Copy BibTeX</a><textarea class="bibtex-content" style="display:none">{{ page.bibtex }}</textarea><span class="copy-msg" style="margin-left:8px;display:none;font:inherit;">Copied</span>{% endcapture %}
+        {% endif %}
 
         {% if page.citation %}
-          <p id="rec-citation">Recommended citation: {{ page.citation }}{% if links != "" %}<br />{{ links }}{% endif %}</p>
-        {% elsif links != "" %}
-          <p>{{ links }}</p>
+          <p id="rec-citation">Recommended citation: {{ page.citation }}</p>
+        {% endif %}
+
+        {% if links != "" %}
+          <p>{% if page.citation %}{{ links }}{% else %}{{ links }}{% endif %}</p>
         {% endif %}
 
         <script>
